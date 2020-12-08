@@ -2,6 +2,8 @@ const dotenv = require('dotenv');
 var path = require('path');
 const express = require('express');
 const app = express();
+//var meaningCloud = require("meaningCloud_textapi")
+
 dotenv.config();
 
 
@@ -14,8 +16,8 @@ app.listen(8081, function () {
 	console.log('Example app listening on port 8081!');
 });
 
-var textapi = new meaningCloud({
-    application_key: process.env.API_KEY
- });
+// var textapi = new meaningCloud({
+//     application_key: process.env.API_KEY
+//  });
 
 

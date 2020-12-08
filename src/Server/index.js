@@ -5,7 +5,7 @@ const app = express();
 //var meaningCloud = require("meaningCloud_textapi")
 
 dotenv.config();
-
+app.use(express.static('dist'))
 
 app.get('/', function (req, res) {
 	res.sendFile('dist/index.html');

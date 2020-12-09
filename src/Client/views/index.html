@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <form id="form">
+        <form id="form" onsubmit="return Client.handleSubmit(event)">
             <label id="form-title" for="zipcode">Enter text to find out what language it is</label><br>   
             <input type="text" id="someText" name="fname" value="" placeholder="Me gusta leer los libros" ><br>                     
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -21,6 +21,14 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+            <script>
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
         
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

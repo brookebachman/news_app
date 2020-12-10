@@ -7,7 +7,9 @@ function handleSubmit(event){
     const text = document.getElementById("someText").value
     const baseUrl = `https://api.meaningcloud.com/lang-2.0?key=${apiKey}&txt=${text}`
  
-    fetch(baseUrl).then(resp=> resp.json()).then(data => console.log(data))
+    fetch(baseUrl).then(resp=> resp.json()).then(function(data){
+        newsData = data
+    })
         // console.log("get news is running")
         // const response = await fetch(baseUrl, {
             
@@ -24,7 +26,6 @@ function handleSubmit(event){
         
         // }
 
-    
 }
 
 

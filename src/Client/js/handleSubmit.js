@@ -11,7 +11,7 @@ function handleSubmit(event){
         console.log(data)
         newsData = data
     })
-        
+    Client.postToFrontend(data)
 
 }
 

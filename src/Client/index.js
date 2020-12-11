@@ -1,6 +1,10 @@
 alert("I EXIST")
 import {handleSubmit} from './js/handleSubmit.js'
-//import {} from './js/blah.js'
+import {postToFrontend} from './js/postToFrontend.js'
+import './styles/base.scss'
+
+
 export {
-    handleSubmit
+    handleSubmit,
+    postToFrontend
 }

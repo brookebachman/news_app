@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/getData', function(req,res){
-	res.send(newData)
+	res.send(newsData)
 })
 
 // designates what port the app will listen to for incoming requests
@@ -28,7 +28,7 @@ app.post('/addData', function(req, res){
 	console.log(req.body)
 	newEntry = {
 		text: req.body.text,
-		language: req.body.language
+		name: req.body.name
 	}
 	newsData = newEntry
 	res.send(newData)

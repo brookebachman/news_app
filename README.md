@@ -1,0 +1,1 @@
+This is an application where a user can enter text into a form, and meaningCloud will let the user know what language it is.

@@ -2,14 +2,29 @@ const dotenv = require('dotenv');
 var path = require('path');
 const express = require('express');
 const app = express();
+const fetch = requires('node-fetch');
 //var meaningCloud = require("meaningCloud_textapi")
-let newsData = {}
 dotenv.config();
 app.use(express.static('dist'))
 
+app.get('/', async function(req,res){
+	const apiKey = process.env.apiKey
+	const Url = `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&of=json txt=${req.body.url}&lang=en`
+	let response = await fetch(Url)
+	let data = response.json()
+	const apiData = {}
+	apiData.polarity = data.score_tag
+    apiData.agreement = data.agreement
+    apiData.irony = data.irony
+    apiData.subjectivity = data.subjectivity
+    apiData.confidence = data.confidence
+    res.send(apiData)
+})
+
 app.get('/', function (req, res) {
-	res.sendFile('dist/index.html');
+	res.sendFile(req.body);
 });
+
 
 app.get('/getData', function(req,res){
 	res.send(newsData)
@@ -27,8 +42,8 @@ app.listen(8081, function () {
 app.post('/addData', function(req, res){
 	console.log(req.body)
 	newEntry = {
-		text: req.body.text,
-		name: req.body.name
+		text: req.body.url,
+		
 	}
 	newsData = newEntry
 	res.send(newData)

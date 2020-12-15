@@ -5,7 +5,7 @@ function handleSubmit(event) {
 
 	const text = document.getElementById('someText').value;
 	// const baseUrl = `https://api.meaningcloud.com/lang-2.0?key=${apiKey}&txt=${text}`
-	const baseUrl = 'http://localhost:8080/';
+	const baseUrl = 'http://localhost:8081/';
 
 	fetch(baseUrl, {
 		method: 'POST',

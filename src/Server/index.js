@@ -11,14 +11,20 @@ app.get('/', async function(req,res){
 	const apiKey = process.env.apiKey
 	const Url = `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&of=json txt=${req.body.url}&lang=en`
 	let response = await fetch(Url)
-	let data = response.json()
-	const apiData = {}
-	apiData.polarity = data.score_tag
-    apiData.agreement = data.agreement
-    apiData.irony = data.irony
-    apiData.subjectivity = data.subjectivity
-    apiData.confidence = data.confidence
-    res.send(apiData)
+	try {
+		let data = response.json()
+		const apiData = {}
+		apiData.polarity = data.score_tag
+		apiData.agreement = data.agreement
+		apiData.irony = data.irony
+		apiData.subjectivity = data.subjectivity
+		apiData.confidence = data.confidence
+		console.log(apiData)
+		res.send(apiData)
+	} catch (error){
+		console.log(error)
+	}
+	
 })
 
 app.get('/', function (req, res) {
@@ -40,7 +46,6 @@ app.post('/addData', function(req, res){
 	console.log(req.body)
 	newEntry = {
 		text: req.body.url,
-		
 	}
 	newsData = newEntry
 	res.send(newsData)

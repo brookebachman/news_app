@@ -11,10 +11,11 @@ body {
         color: white;
         display: block;
         text-align: center;
+        font-family: $main-font;
+        font-size: 40px;
         #form {
             margin: 20px;
             text-align: left;
-            font-family: $main-font;
             color: white;
             font-size: 40px;
         }

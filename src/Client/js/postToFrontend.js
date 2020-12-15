@@ -10,7 +10,20 @@ function postToFrontend() {
             name: newsData.name
         })
 		.then((resp) => resp.json())
-        .then((data) => console.log(data))
+        .then((data) => {
+            const sentiment = document.createElement('div')
+            sentiment.innerText = "Sentiment"
+            sentiment.id = "sentiment"
+            sentiment.innerHTML += `  
+            <p>Sentiment:</p>
+            <div id="polarity"></div>
+            <div id="confidence"></div>
+            <div id="subjectivity"></div>
+            <div id="agreement"></div>
+            <div id="irony"></div>
+            `
+
+        })
     })
 }
 

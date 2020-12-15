@@ -11,12 +11,12 @@
     </head>
     <body>
         <main id="main-container">
-            <form id="form" onsubmit="return Client.handleSubmit(event)"></form>
+            <p id="sentiment">Enter a link to an article to find out its sentiment</p>
+            <form id="form" onsubmit="return Client.handleSubmit(event)">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="someText" aria-describedby="emailHelp" placeholder="https://www.denverpost.com/2020/12/15/colorado-covid-death-toll-grim-new-cases-hospitalizations/" ><br>                     
+                  <input type="text" class="form-control" id="someText" placeholder="https://www.denverpost.com/2020/12/15/colorado-covid-death-toll-grim-new-cases-hospitalizations/" ><br>                     
                 </div>
-                <button type="submit" class="btn btn-light">Submit</button>
+                <button type="submit" class="btn btn-light btn-lg">Submit</button>
               </form>
               <br></br>
             

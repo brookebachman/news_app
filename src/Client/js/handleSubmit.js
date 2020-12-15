@@ -18,11 +18,8 @@ function handleSubmit(event) {
 		}),
 	})
 		.then((resp) => resp.json())
-		.then((data) => 
-			console.log(data)
-			//newsData = data
-		);
-	//Client.postToFrontend(newsData)
+		.then((data) => (newsData = data))
+		.then(Client.postToFrontend(newsData));
 }
 
 export { handleSubmit };

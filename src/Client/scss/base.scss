@@ -1,14 +1,24 @@
- @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
-$main-font: Lateef, cursive;
-
-.main-container {
-    background: linear-gradient(0deg, rgba(50, 181, 205, 1) 0%, rgba(199, 137, 137, 1) 50%, rgba(252, 176, 69, 1) 100%);
+$main-font: 'Cookie', cursive;
+body {
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 100vh;
-    
-    #form {
-        margin: 20px;
+    #main-container {
+        padding: 80px;
+        color: white;
+        display: block;
         text-align: center;
-        font-family: $main-font;
+        #form {
+            margin: 20px;
+            text-align: left;
+            font-family: $main-font;
+            color: white;
+            font-size: 40px;
+        }
     }
+    
 }
+

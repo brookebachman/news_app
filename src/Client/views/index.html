@@ -10,13 +10,17 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <main is="main-container">
-            <form id="form" onsubmit="return Client.handleSubmit(event)">
-                <label id="form-title" for="zipcode">Enter a link to an article to find out what the sentiment is</label><br>   
-                <input type="text" id="someText" name="fname" value="" placeholder="https://github.com/brookebachman/news_app" ><br>                     
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-            <strong>Form Results:</strong>
+        <main id="main-container">
+            <form id="form" onsubmit="return Client.handleSubmit(event)"></form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="someText" aria-describedby="emailHelp" placeholder="https://www.denverpost.com/2020/12/15/colorado-covid-death-toll-grim-new-cases-hospitalizations/" ><br>                     
+                </div>
+                <button type="submit" class="btn btn-light">Submit</button>
+              </form>
+              <br></br>
+            
+            <p>Sentiment:</p>
                 <div id="polarity"></div>
                 <div id="confidence"></div>
                 <div id="subjectivity"></div>

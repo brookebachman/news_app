@@ -35,7 +35,6 @@ app.get('/', function (req, res) {
 app.get('/getData', function(req,res){
 	res.send(newsData)
 })
-
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
 	console.log('Example app listening on port 8081!');

@@ -5,21 +5,24 @@ function handleSubmit(event) {
 
 	const text = document.getElementById('someText').value;
 	// const baseUrl = `https://api.meaningcloud.com/lang-2.0?key=${apiKey}&txt=${text}`
-	const baseUrl = 'http://localhost:8081/';
-
+	const baseUrl = 'http://localhost:8081/test';
 	fetch(baseUrl, {
 		method: 'POST',
-		credentials: 'same-origin',
 		headers: {
-			'Content-type': 'application.json',
+			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify({
-			url: text,
+			text: text,
 		}),
 	})
 		.then((resp) => resp.json())
-		.then((data) => (newsData = data))
-		.then(Client.postToFrontend(newsData));
-}
+		.then(function (data) {
+			console.log('Request succeeded with JSON response', data);
 
+			Client.postToFrontend(data);
+		})
+		.catch(function (error) {
+			console.log('Request failed', error);
+		});
+}
 export { handleSubmit };

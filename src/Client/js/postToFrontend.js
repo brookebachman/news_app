@@ -1,29 +1,18 @@
 function postToFrontend(newsData) {
-	fetch('http://localhost:8081/getData', {
-        method: 'POST', 
-        headers: {
-            Accept: 'application/json',
-			'Content-type': 'application/json'
-        },
-        body: JSON.stringify({
-            text: newsData.text
-        })
-    })
-		.then((resp) => resp.json())
-        .then((data) => {
-            const sentiment = document.createElement('div')
-            sentiment.innerText = "Sentiment"
-            sentiment.id = "sentiment"
-            sentiment.innerHTML += `  
-            <div id="polarity"></div>
-            <div id="confidence"></div>
-            <div id="subjectivity"></div>
-            <div id="agreement"></div>
-            <div id="irony"></div>
-            `
+    const results = document.getElementById("results")
+	console.log('postToFrontend', newsData);
+    const sentiment = document.createElement('div');
+    results.appendChild(sentiment)
+    sentiment.id = "sentiment"
+	sentiment.innerHTML += `  
+            <div id="polarity">Is this polarizing? ${newsData.polarity}</div>
+            <div id="confidence"> Is this a confident article? ${newsData.confidence}</div>
+            <div id="subjectivity">Is this subjective? ${newsData.subjectivity}</div>
+            <div id="agreement"> Is there agreement? ${newsData.agreement}</div>
+            <div id="irony"> Is this ironic? ${newsData.irony}</div>
+            `;
 
-        })
-    
+	//})
 }
 
-export {postToFrontend}
+export { postToFrontend };

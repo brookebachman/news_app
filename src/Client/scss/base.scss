@@ -2,30 +2,41 @@
 
 $main-font: 'Cookie', cursive;
 body {
-    background: #bdc3c7;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    height: 100vh;
-    #main-container {
-        padding:150px 100px;
-        display: block;
-        text-align: center;
-        font-size: 50px;
+	background: #bdc3c7; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to bottom,
+		#2c3e50,
+		#bdc3c7
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	height: 120vh;
+	#main-container {
+		padding: 150px 100px;
+		display: block;
+		text-align: center;
+		font-size: 50px;
         color: white;
-        #sentiment {
-           
+		#prompt {
+            text-align: center;
+            font-size: 30px;
             font-family: $main-font;
            
-            text-align: center;
-        }
-    
-        #form {
-            margin: 20px;
-            text-align: left;
-            color: white;
-            font-size: 40px;
-        }
+		}
+
+		#form {
+			margin: 20px;
+			text-align: left;
+			color: white;
+			font-size: 40px;
+		}
     }
     
+	button {
+		text-align: center;
+	}
+	footer {
+		margin: 400px;
+		text-align: center;
+		color: #2c3e50;
+	}
 }
-

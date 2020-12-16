@@ -11,17 +11,21 @@
     </head>
     <body>
         <main id="main-container">
-            <p id="sentiment">Enter a link to an article to find out its sentiment</p>
-            <form id="form" onsubmit="return Client.handleSubmit(event)">
+            <p id="prompt">Enter a link to an article to find out its sentiment</p>
+            <form id="form">
                 <div class="form-group">
                   <input type="text" class="form-control" id="someText" placeholder="https://www.denverpost.com/2020/12/15/colorado-covid-death-toll-grim-new-cases-hospitalizations/" ><br>                     
                 </div>
-                <button type="submit" class="btn btn-light btn-lg">Submit</button>
+                <button onclick="Client.handleSubmit(event)" type="submit" class="btn btn-light btn-lg">Submit</button>
               </form>
               <br></br>
+              <div id="results"></div>
             
           
         </main>
+        <footer>
+            <p>Made by Brooke Bachman ©</p>
+        </footer>
             <script>
                 // Check that service workers are supported
                 if ('serviceWorker' in navigator) {

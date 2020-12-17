@@ -17,12 +17,10 @@ function handleSubmit(event) {
 	})
 		.then((resp) => resp.json())
 		.then(function (data) {
-			console.log('Request succeeded with JSON response', data);
-
 			Client.postToFrontend(data);
 		})
 		.catch(function (error) {
 			console.log('Request failed', error);
-		});
+		}); 
 }
 export { handleSubmit };

@@ -1,11 +1,10 @@
 async function handleSubmit(event, defaultText) {
 	event.preventDefault();
 	console.log('handleSubmit is running');
-	let newsData = {};
 	const text = defaultText || getTextValue()
 	// const baseUrl = `https://api.meaningcloud.com/lang-2.0?key=${apiKey}&txt=${text}`
 	const baseUrl = 'http://localhost:8081/test';
-	const data = fetch(baseUrl, {
+	const data = await fetch(baseUrl, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',

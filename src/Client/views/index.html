@@ -11,16 +11,16 @@
     </head>
     <body>
         <main id="main-container">
-            <p id="prompt">Enter a link to an article to find out its sentiment</p>
+            <h1 class="centered main-font">Enter a link to an article to find out its sentiment</h1>
             <form id="form">
                 <div class="form-group">
                   <input type="text" class="form-control" id="someText" placeholder="https://www.denverpost.com/2020/12/15/colorado-covid-death-toll-grim-new-cases-hospitalizations/" ><br>                     
                 </div>
-                <button onclick="Client.handleSubmit(event)" type="submit" class="btn btn-light btn-lg">Submit</button>
+                <div class="centered"><button onclick="Client.handleSubmit(event)" type="submit" class="btn btn-light btn-lg">Submit</button></div>
               </form>
               <br></br>
               <div id="results"></div>
-          
+           
         </main>
         <footer>
             <p>Made by Brooke Bachman ©</p>

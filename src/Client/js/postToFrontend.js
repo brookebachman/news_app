@@ -1,27 +1,22 @@
-function postToFrontend(newsData) {
-
-    postResults(newsData)
-	
+function postToFrontend(newsData, defaultText) {
+	console.log(newsData);
+	const news = newsData || defaultText;
+	const results = document.getElementById('results');
+	const sentiment = document.createElement('div');
+	sentiment.id = 'sentiment';
+	sentiment.innerHTML = template(news)
+	results.appendChild(sentiment);
 }
 
-function postResults(newData){
-    if(newsData && Object.keys(newsData).length >= 4) {
-        const { polarity, confidence, subjectivity, subjectivity, irony } = newsData
-        const results = document.getElementById("results")
-	    console.log('postToFrontend', newsData);
-        const sentiment = document.createElement('div');
-        results.appendChild(sentiment)
-        sentiment.id = "sentiment"
-        return sentiment.innerHTML += `  
-            <div id="polarity">Is this polarizing? ${polarity}</div>
-            <div id="confidence"> Is this a confident article? ${confidence}</div>
-            <div id="subjectivity">Is this subjective? ${subjectivity}</div>
-            <div id="agreement"> Is there agreement? ${agreement}</div>
-            <div id="irony"> Is this ironic? ${irony}</div>
-            `;
-    } else {
-        return sentiment.innerHTML +=`<p> Data not available`
-    }
-}
 
-export { postToFrontend, postResults };
+function template(news){
+    return `
+    <div id="polarity"> Is this polarizing? ${news.polarity}</div>
+    <div id="confidence"> Confidence? ${news.confidence}</div>
+    <div id="subjectivity"> Subjective?${news.subjectivity}</div>
+    <div id="agreement"> Is there agreement?${news.agreement}</div>
+    <div id="irony">Ironic? ${news.irony}</div>
+    `
+
+}
+export { postToFrontend, template };

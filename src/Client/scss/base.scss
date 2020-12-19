@@ -16,13 +16,8 @@ body {
 		text-align: center;
 		font-size: 50px;
         color: white;
-		#prompt {
-            text-align: center;
-            font-size: 30px;
-            font-family: $main-font;
-           
-		}
-
+		
+		
 		#form {
 			margin: 20px;
 			text-align: left;
@@ -30,10 +25,15 @@ body {
 			font-size: 40px;
 		}
     }
-    
-	button {
-		text-align: center;
+	
+	.main-font {
+		font-family: $main-font;
 	}
+	.centered {
+		text-align: center;
+		margin: 0 auto;
+	}
+
 	footer {
 		margin: 400px;
 		text-align: center;

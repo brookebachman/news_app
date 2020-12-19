@@ -1,7 +1,7 @@
 function postToFrontend(newsData) {
 
-    Client.postResults(newsData)
-	//})
+    postResults(newsData)
+	
 }
 
 function postResults(newData){
@@ -23,4 +23,5 @@ function postResults(newData){
         return sentiment.innerHTML +=`<p> Data not available`
     }
 }
-export { postToFrontend };
+
+export { postToFrontend, postResults };

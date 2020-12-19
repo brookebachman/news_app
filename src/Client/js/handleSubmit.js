@@ -1,12 +1,11 @@
-function handleSubmit(event) {
+async function handleSubmit(event, defaultText) {
 	event.preventDefault();
 	console.log('handleSubmit is running');
 	let newsData = {};
-
-	const text = document.getElementById('someText').value;
+	const text = defaultText || getTextValue()
 	// const baseUrl = `https://api.meaningcloud.com/lang-2.0?key=${apiKey}&txt=${text}`
 	const baseUrl = 'http://localhost:8081/test';
-	fetch(baseUrl, {
+	const data = fetch(baseUrl, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -16,11 +15,15 @@ function handleSubmit(event) {
 		}),
 	})
 		.then((resp) => resp.json())
-		.then(function (data) {
-			Client.postToFrontend(data);
-		})
-		.catch(function (error) {
-			console.log('Request failed', error);
-		}); 
+        Client.postToFrontend(data);
+        return data
 }
+
+function getTextValue(){
+    const text = document.getElementById('someText').value;
+    return text
+
+}
+
+
 export { handleSubmit };

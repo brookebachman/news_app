@@ -27,17 +27,7 @@
         </footer>
             <script>
                 // Check that service workers are supported
-                if ('serviceWorker' in navigator) {
-                // Use the window load event to keep the page load performant
-                window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('../dist/service-worker.js').then(registraion=>{
-                        console.log('registraion is succesfull')
-                    });
-                });
-            }
-            else{
-                console.log('service worker are not supported')
-            }
+               
     </script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">

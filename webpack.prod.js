@@ -10,7 +10,7 @@ module.exports = {
     entry: './src/Client/index.js',
     output: {
         libraryTarget: 'var',
-        library: 'client'
+        library: 'Client'
     },
     module : {
         rules: [
